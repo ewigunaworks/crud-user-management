@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "b1896168-c0b6-4395-9470-7c0c1ee7775e",
+		"name": "crud-user-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3108306"
+	},
+	"item": [
+		{
+			"name": "POST - User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Erwin\",\n    \"username\": \"erwin1@yopmail.com\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Auth Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"erwin2@yopmail.com\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Get User by Username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzYzMWQxMzcxNmM5MzhkYzIwZDEwZTUiLCJpYXQiOjE2Njc0NDA4MDl9.FyJKcqPqlaHYSZAuoRVmfiFxy0moLiLrESopdZYEZzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/username/:username",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"username",
+						":username"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "erwin@yopmail.com",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "erwin1@yopmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Get User List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzYzMWQxMzcxNmM5MzhkYzIwZDEwZTUiLCJpYXQiOjE2Njc0NDA4MDl9.FyJKcqPqlaHYSZAuoRVmfiFxy0moLiLrESopdZYEZzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Get User Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzYzMWQxMzcxNmM5MzhkYzIwZDEwZTUiLCJpYXQiOjE2Njc0NDA4MDl9.FyJKcqPqlaHYSZAuoRVmfiFxy0moLiLrESopdZYEZzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/detail/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"detail",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "63631d7e92fbb2b98fd96682"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzYzMWQxMzcxNmM5MzhkYzIwZDEwZTUiLCJpYXQiOjE2Njc0NDA4MDl9.FyJKcqPqlaHYSZAuoRVmfiFxy0moLiLrESopdZYEZzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/delete/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"delete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "63631d7e92fbb2b98fd96682"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzYzMWQxMzcxNmM5MzhkYzIwZDEwZTUiLCJpYXQiOjE2Njc0NDA4MDl9.FyJKcqPqlaHYSZAuoRVmfiFxy0moLiLrESopdZYEZzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"63631d13716c938dc20d10e5\",\n    \"name\": \"Erwin12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
