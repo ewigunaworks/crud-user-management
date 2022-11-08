@@ -14,6 +14,13 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  /**
+   * It takes an email and password, gets the user from the database, and compares the password to the
+   * hashed password in the database
+   * @param {string} email - string - The email address of the user
+   * @param {string} password - The password that the user entered in the login form.
+   * @returns The user object is being returned.
+   */
   async validateUser(email: string, password: string): Promise <any> {
     const user = await this.userService.getUserByUsername(email);
 
@@ -24,6 +31,11 @@ export class AuthService {
     return null;
   }
 
+  /**
+   * It takes a user object, creates a payload object, and then returns an access token
+   * @param {any} user - any - this is the user object that is passed in from the controller.
+   * @returns The access token is being returned.
+   */
   async login(user: any) {
     const payload = {
       username: user.email,
